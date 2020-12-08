@@ -93,8 +93,23 @@ class ApplicationWindow(object):
 
     def build_list_command(self):
         """Uses the ListRandomiser class to build the output list."""
+
         output_text = ListRandomiser().select_random()
-        messagebox.showinfo("Randomised List", output_text)
+
+        new_window = tkinter.Tk()
+        
+        T = tkinter.Text(
+            new_window,
+            height=2,
+            width=30,
+            bg="lightgrey",
+            relief="flat",
+        )
+        T.insert(tkinter.END, output_text)
+        T.config(state=tkinter.DISABLED)
+        T.pack()
+
+        new_window.mainloop()
     
     def build_button(self, button_text, command):
         """Generates a button that calls a command.
@@ -124,4 +139,4 @@ class ApplicationWindow(object):
         self.space = tkinter.Label(self.window, height=2, ).pack()
 
 if __name__ == "__main__":
-    ApplicationWindow("List Randomiser", "400x300")
+    ApplicationWindow("List Randomiser", "200x100")
