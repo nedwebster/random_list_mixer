@@ -1,6 +1,6 @@
 # random_list_mixer
 Pulls an individual value from numerous lists and returns a concatination of
-them.
+them. Built as a quick tool for a friend! :)
 
 ## Setup
 - Store your lists in the lists folder with the executable.
